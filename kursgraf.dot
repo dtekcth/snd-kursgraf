@@ -65,19 +65,19 @@ digraph G
 	
 	//CSALL
     subgraph {
-
         node [style ="filled", fillcolor="red"]
         advAlg [label = "Advanced \n Algoritmer"]
         advFunc [label = "Advanced \n Func. Prog"]
         logik [label = "Logic in CS"]
-        prolang [label = "Programming \n Language"]
+        prolang [label = "Programming \n Language Tech"]
         ml [label = "Machine Learning"]
         softEng [label ="Software Eng. \n using Formal M"]
         discopt [label = "Discrete Optimization"]
         ai [label ="Artifical Intelligence"]
         models [label ="Models of Computation"]
-        progsecurity
-        types
+        langsecurity [label ="Prog. Lang. \n Security"]
+        types [label = "Types in programs \n and proofs "]
+        algoritmer [label ="Algorithms"]
     }
     diskmat -> models
     logik -> models
@@ -88,6 +88,9 @@ digraph G
     linalg -> discopt
     concurrent -> softEng
     logik -> softEng
+    //behövs denna? stat -> algoritmer -> advalg
+    diskmat -> logik
+    matstat -> advAlg
     linalg -> advAlg
     algoritmer -> advAlg
     algoritmer -> ml
@@ -95,8 +98,10 @@ digraph G
     matstat -> ml
     linalg -> ml
     haskell -> advFunc
-
-    //Valbara
+    dstrukt -> ai
+    algoritmer -> ai
+   
+   //Valbara
 	subgraph {
 		node [style="dotted, filled"]
 		flervar [label = "Analys i\nflera variabler"]
@@ -110,8 +115,5 @@ digraph G
 	diskmat -> algoritmer
 	matstat -> algoritmer
 
-	//CSALL
-	logik [label = "Logik"]
-	diskmat -> logik
 
 }	
