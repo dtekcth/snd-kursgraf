@@ -63,12 +63,43 @@ digraph G
 	el -> regler
 	linalg -> regler
 	
+	//CSALL
+    subgraph {
 
-	//Valbara
+        node [style ="filled", fillcolor="red"]
+        advAlg [label = "Advanced \n Algoritmer"]
+        advFunc [label = "Advanced \n Func. Prog"]
+        logik [label = "Logic in CS"]
+        prolang [label = "Programming \n Language"]
+        ml [label = "Machine Learning"]
+        softEng [label ="Software Eng. \n using Formal M"]
+        discopt [label = "Discrete Optimization"]
+        ai [label ="Artifical Intelligence"]
+        models [label ="Models of Computation"]
+        progsecurity
+        types
+    }
+    diskmat -> models
+    logik -> models
+    diskmat -> crypto
+    haskell -> types
+    types -> models
+    algoritmer -> discopt
+    linalg -> discopt
+    concurrent -> softEng
+    logik -> softEng
+    linalg -> advAlg
+    algoritmer -> advAlg
+    algoritmer -> ml
+    analys -> ml
+    matstat -> ml
+    linalg -> ml
+    haskell -> advFunc
+
+    //Valbara
 	subgraph {
 		node [style="dotted, filled"]
 		flervar [label = "Analys i\nflera variabler"]
-		algoritmer [label = "Algoritmer"]
 		digkonstr [label = "Digital-\nkonstruktion"]
 	}
 	syntes -> digkonstr
