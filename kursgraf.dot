@@ -1,0 +1,86 @@
+digraph G
+{
+	layout=fdp
+	nodesep=1
+	splines=true
+	overlap=prism 
+	node [style="solid,filled"]
+
+	
+
+	//TKDAT-1
+	subgraph {
+		node [fillcolor="lightblue"]
+		haskell [label = "Funktionell\nProgrammering"]
+		diskmat [label = "Diskret\nMatematik"]
+		linalg [label = "Linjär\nAlgebra"]
+		digodat [label = "Digital &\nDatorteknik"]
+		analys [label = "Matematisk\nanalys"]
+		mop [label = "Maskinorienterad\nprogrammering"]
+		el [label = "Elektriska kretsar &\nfält"]
+		barsaft [label = "Bärkraftig\nresurs"]
+	}
+	
+	diskmat -> digodat
+	digodat -> mop
+	analys -> el
+
+	//TKDAT-2
+	subgraph {
+		node [fillcolor="gold1"]
+		matstat [label = "Matematisk\nstatistik"]
+		oop [label = "Objektorienterad\nprogrammering"]
+		fysik [label = "Fysik"]
+		dstrukt [label = "Datastrukturer"]
+		syntes [label = "Digitalsyntes"]
+		subgraph {
+			node [style="dotted, filled"]
+			pp [label = "Programming\nParadigms"]
+			concurrent [label = "Parallel\nprogrammering"]
+		}
+		dst [ label = "Datorsystem-\nteknik"]
+		datakom [label = "Dator-\nkommunikation"]
+	}
+	haskell -> pp
+	haskell -> dstrukt
+	oop -> dstrukt
+	oop -> concurrent
+	oop -> pp
+	mop -> pp
+	digodat -> syntes
+	mop -> dst
+	analys -> fysik
+	linalg -> matstat
+	diskmat -> matstat
+	
+	//TKDAT-3
+	tss [label = "Transformer"]
+	regler [label = "Reglerteknik"]
+	tss -> regler
+	analys -> tss
+	analys -> regler
+	fysik -> regler
+	el -> regler
+	linalg -> regler
+	
+
+	//Valbara
+	subgraph {
+		node [style="dotted, filled"]
+		flervar [label = "Analys i\nflera variabler"]
+		algoritmer [label = "Algoritmer"]
+		digkonstr [label = "Digital-\nkonstruktion"]
+	}
+	syntes -> digkonstr
+	linalg -> flervar
+	analys -> flervar
+	dstrukt -> algoritmer
+	haskell -> algoritmer
+	diskmat -> algoritmer
+	matstat -> algoritmer
+
+	//CSALL
+	logik [label = "Logik"]
+	diskmat -> logik
+
+}	
