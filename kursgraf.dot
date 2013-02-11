@@ -1,6 +1,6 @@
 digraph G
 {
-	layout=neato
+	layout=circo
 	//nodesep=1
 	splines=true
 	overlap=prism 
@@ -8,8 +8,8 @@ digraph G
 
 	
 
-	//TKDAT-1
-	subgraph {
+	subgraph cluster_TKDAT1 {
+                label = "TKDAT-1"
 		rank = same
 		node [fillcolor="lightblue"]
 		haskell [label = "Funktionell\nprogrammering"]
@@ -26,8 +26,8 @@ digraph G
 	digodat -> mop
 	analys -> el
 
-	//TKDAT-2
-	subgraph {
+	subgraph cluster_TKDAT2 {
+                label = "TKDAT-2"
 		rank = same
 		node [fillcolor="gold1"]
 		matstat [label = "Matematisk\nstatistik"]
@@ -55,8 +55,8 @@ digraph G
 	linalg -> matstat
 	diskmat -> matstat
 	
-	//TKDAT-3
-	subgraph {
+	subgraph cluster_TKDAT3 {
+                label = "TKDAT-3"
 		rank = same
 		node [fillcolor = "green1"]
 		tss [label = "Transformer"]
@@ -65,13 +65,12 @@ digraph G
 	}
 	tss -> regler
 	analys -> tss
-	analys -> regler
 	fysik -> regler
 	el -> regler
 	linalg -> regler
 	
-	//CSALL
-	subgraph {
+	subgraph cluster_CSALL {
+                label = "CSALL"
 		rank = same
 		node [style ="filled", fillcolor="red"]
 		advAlg [label = "Avancerade\nAlgoritmer"]
@@ -94,20 +93,13 @@ digraph G
 	haskell -> types
 	types -> models
 	algoritmer -> discopt
-	linalg -> discopt
 	concurrent -> softEng
 	logik -> softEng
-	//behövs denna? stat -> algoritmer -> advalg
 	diskmat -> logik
-	matstat -> advAlg
-	linalg -> advAlg
 	algoritmer -> advAlg
 	algoritmer -> ml
 	analys -> ml
-	matstat -> ml
-	linalg -> ml
 	haskell -> advFunc
-	dstrukt -> ai
 	algoritmer -> ai
    
    //Valbara
@@ -120,8 +112,6 @@ digraph G
 	linalg -> flervar
 	analys -> flervar
 	dstrukt -> algoritmer
-	haskell -> algoritmer
-	diskmat -> algoritmer
 	matstat -> algoritmer
 
 
