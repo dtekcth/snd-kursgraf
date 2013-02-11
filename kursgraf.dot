@@ -109,7 +109,30 @@ digraph G
 	haskell -> advFunc
 	dstrukt -> ai
 	algoritmer -> ai
-   
+
+	//CSN
+	
+	subgraph {
+		rank = same
+		node [style="filled",fillcolor="green4"]
+		distSys [label="Distributed Systems"]
+		advDistSys [label="Advanced distributed systems"]
+		ftcs [label="Fault tolerant computer systems"]
+		computerNetworks [label="Computer Networks"]
+		oS [label="Operating systems"]
+		compilerConstruction [label="Compiler construction"]
+		networkSecurity [label="Network Security"]
+		computerSecurity [label="Computer Security"]
+	}   
+	
+	distSys -> advDistSys
+	dstrukt -> oS 
+	mop -> oS	
+	datakom -> networkSecurity
+	dstrukt -> compilerConstruction
+	
+
+
    //Valbara
 	subgraph {
 		node [style="dotted, filled"]
