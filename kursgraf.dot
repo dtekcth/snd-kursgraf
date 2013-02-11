@@ -104,7 +104,8 @@ digraph G
 
 	//CSN
 	
-	subgraph {
+	subgraph  cluster_CSN {
+		label="CSN"
 		rank = same
 		node [style="filled",fillcolor="green4"]
 		distSys [label="Distributed Systems"]
@@ -121,6 +122,7 @@ digraph G
 	dstrukt -> oS 
 	mop -> oS	
 	datakom -> networkSecurity
+	datakom -> computerNetworks
 	dstrukt -> compilerConstruction
 	
 
