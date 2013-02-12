@@ -1,2 +1,4 @@
 #!/bin/bash
-dot kursgraf.dot -Tpdf > kursgraf.pdf
+dot kursgraf.dot -Tpdf > kursgraf_dot.pdf
+neato kursgraf.dot -Tpdf > kursgraf_neato.pdf
+sfdp kursgraf.dot -Tpdf > kursgraf_sfdp.pdf

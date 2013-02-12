@@ -1,10 +1,11 @@
 ## Dependencies
 * Graphviz
+* DejaVu Sans TTF font
 
 ## Dtek?
-Går du på DTEK? 
-Tycker du någon kurs saknas eller något beroende är fel? 
-Ändra och skapa pull-requests! 
+Går du på DTEK?
+Tycker du någon kurs saknas eller något beroende är fel?
+Ändra och skapa pull-requests!
 
 ## Kompilera
 För linux:

@@ -1,12 +1,14 @@
 digraph G
 {
-	layout=circo
 	//nodesep=1
 	splines=true
-	overlap=prism 
+	overlap=prism
+	node [fontname="DejaVuSans"]
+	fontname="DejaVuSans"
+
 	node [style="solid,filled"]
 
-	
+
 
 	subgraph cluster_TKDAT1 {
                 label = "TKDAT-1"
@@ -21,7 +23,7 @@ digraph G
 		el [label = "Elektriska kretsar &\nfält"]
 		barsaft [label = "Bärkraftig\nresurs"]
 	}
-	
+
 	diskmat -> digodat
 	digodat -> mop
 	analys -> el
@@ -54,7 +56,7 @@ digraph G
 	analys -> fysik
 	linalg -> matstat
 	diskmat -> matstat
-	
+
 	subgraph cluster_TKDAT3 {
                 label = "TKDAT-3"
 		rank = same
@@ -68,7 +70,7 @@ digraph G
 	fysik -> regler
 	el -> regler
 	linalg -> regler
-	
+
 	subgraph cluster_CSALL {
                 label = "CSALL"
 		rank = same
@@ -103,7 +105,7 @@ digraph G
 	algoritmer -> ai
 
 	//CSN
-	
+
 	subgraph  cluster_CSN {
 		label="CSN"
 		rank = same
@@ -116,15 +118,15 @@ digraph G
 		compilerConstruction [label="Compiler construction"]
 		networkSecurity [label="Network Security"]
 		computerSecurity [label="Computer Security"]
-	}   
-	
+	}
+
 	distSys -> advDistSys
-	dstrukt -> oS 
-	mop -> oS	
+	dstrukt -> oS
+	mop -> oS
 	datakom -> networkSecurity
 	datakom -> computerNetworks
 	dstrukt -> compilerConstruction
-	
+
 
 
    //Valbara
@@ -140,4 +142,4 @@ digraph G
 	matstat -> algoritmer
 
 
-}	
+}
