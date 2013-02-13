@@ -60,13 +60,13 @@ digraph G
 	subgraph cluster_TKDAT3 {
                 label = "TKDAT-3"
 		rank = same
-		node [fillcolor = "green1"]
+		node [fillcolor = "green2"]
 		tss [label = "Transformer"]
 		regler [label = "Reglerteknik"]
-		mts [label = "MTS-kurser"]
 	}
 	tss -> regler
 	analys -> tss
+	analys -> regler
 	fysik -> regler
 	el -> regler
 	linalg -> regler
@@ -95,16 +95,20 @@ digraph G
 	haskell -> types
 	types -> models
 	algoritmer -> discopt
+	linalg -> discopt
 	concurrent -> softEng
 	logik -> softEng
 	diskmat -> logik
+	matstat -> advAlg
+	linalg -> advAlg
 	algoritmer -> advAlg
 	algoritmer -> ml
 	analys -> ml
+	matstat -> ml
+	linalg -> ml
 	haskell -> advFunc
+	dstrukt -> ml
 	algoritmer -> ai
-
-	//CSN
 
 	subgraph  cluster_CSN {
 		label="CSN"
@@ -134,11 +138,14 @@ digraph G
 		node [style="dotted, filled"]
 		flervar [label = "Analys i\nflera variabler"]
 		digkonstr [label = "Digital-\nkonstruktion"]
+		mts [label = "MTS-kurser"]
 	}
 	syntes -> digkonstr
 	linalg -> flervar
 	analys -> flervar
 	dstrukt -> algoritmer
+	haskell -> algoritmer
+	diskmat -> algoritmer
 	matstat -> algoritmer
 
 

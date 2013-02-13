@@ -1,4 +1,15 @@
 #!/bin/bash
-dot kursgraf.dot -Tpdf > kursgraf_dot.pdf
-neato kursgraf.dot -Tpdf > kursgraf_neato.pdf
-sfdp kursgraf.dot -Tpdf > kursgraf_sfdp.pdf
+IN=kursgraf.dot
+ENGINES=(dot neato sfdp fdp)
+
+if [[ "$1" = "reduce" ]]; then
+	FP=`mktemp`
+	tred $IN > $FP
+	IN=$FP
+fi
+
+for eng in ${ENGINES[@]}; do
+	command $eng $IN -Tpdf > "kursgraf_$eng.pdf"
+done
+
+rm $FP

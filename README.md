@@ -5,7 +5,8 @@ Vi behöver hjälp med att fylla i relationer och kurser, speciellt från dig so
 ## Stilguide
 Obestämt, kolla issues.
 
-"Committa" inte PDF filer till arkivet, då det skapar merge-conflicts.
+* Låt transitiva kanter som kan förtydliga vad som är viktigt för en kurs vara kvar. Skapa ett "issue" om osäkerhet uppstår.
+* "Committa" inte PDF filer till arkivet, då det skapar merge-conflicts.
 
 ## Dependencies
 * Graphviz
@@ -18,7 +19,13 @@ Tycker du någon kurs saknas eller något beroende är fel?
 
 ## Kompilera
 För linux:
+
+Med transitiva kanter:
 ```
-chmod +x compile
 ./compile
+```
+
+Utan transitiva kanter:
+```
+./compile reduce
 ```
