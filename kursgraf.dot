@@ -58,7 +58,7 @@ digraph G
 	diskmat -> matstat
 
 	subgraph cluster_TKDAT3 {
-                label = "TKDAT-3"
+		label = "TKDAT-3"
 		rank = same
 		node [fillcolor = "green2"]
 		tss [label = "Transformer"]
@@ -75,6 +75,9 @@ digraph G
                 label = "CSALL"
 		rank = same
 		node [style ="filled", fillcolor="red"]
+		frontProgramming [label="Frontiers of programming language technology"]
+		compilerConst [label="Compiler construction"]
+		paraFunc [label="Parallel functional programming"]
 		advAlg [label = "Avancerade\nAlgoritmer"]
 		advFunc [label = "Advanced \n Func. Prog"]
 		logik [label = "Logic in CS"]
@@ -84,8 +87,8 @@ digraph G
 		discopt [label = "Discrete Optimization"]
 		ai [label ="Artifical Intelligence"]
 		models [label ="Models of Computation"]
-		langsecurity [label ="Prog. Lang. \n Security"]
-		types [label = "Types in programs \n and proofs "]
+		langsecurity [label ="Language-based \n Security"]
+		types [label = "Types for programs \n and proofs "]
 		algoritmer [label ="Algorithms"]
 		crypto [label = "Cryptography"]
 	}
@@ -109,27 +112,26 @@ digraph G
 	haskell -> advFunc
 	dstrukt -> ml
 	algoritmer -> ai
+	dstrukt -> compilerConst
 
-	subgraph  cluster_CSN {
+	subgraph cluster_CSN {
 		label="CSN"
 		rank = same
 		node [style="filled",fillcolor="green4"]
+		rts [label="Real time systems"]
+		parallelOrganization [label="Parallel computer organization and design"]
+		parallelRTS [label="Parallel and distributed real-time systems"]
 		distSys [label="Distributed Systems"]
 		advDistSys [label="Advanced distributed systems"]
 		ftcs [label="Fault tolerant computer systems"]
 		computerNetworks [label="Computer Networks"]
-		oS [label="Operating systems"]
-		compilerConstruction [label="Compiler construction"]
 		networkSecurity [label="Network Security"]
 		computerSecurity [label="Computer Security"]
 	}
 
 	distSys -> advDistSys
-	dstrukt -> oS
-	mop -> oS
 	datakom -> networkSecurity
 	datakom -> computerNetworks
-	dstrukt -> compilerConstruction
 
 
 
@@ -138,7 +140,8 @@ digraph G
 		node [style="dotted, filled"]
 		flervar [label = "Analys i\nflera variabler"]
 		digkonstr [label = "Digital-\nkonstruktion"]
-		mts [label = "MTS-kurser"]
+		mts [label = "MTS-kurser"]	
+		oS [label="Operating systems"]
 	}
 	syntes -> digkonstr
 	linalg -> flervar
@@ -147,6 +150,7 @@ digraph G
 	haskell -> algoritmer
 	diskmat -> algoritmer
 	matstat -> algoritmer
-
+	dstrukt -> oS
+	mop -> oS
 
 }
