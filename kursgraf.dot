@@ -10,8 +10,8 @@ digraph {
 	splines=true
 	overlap=prism
 	//arrowsize=10.0
-	node [fontname="DejaVuSans"]
-	fontname="DejaVuSans"
+	node [fontname="Latin Modern Sans"]
+	fontname="Latin Modern Sans"
 
 	node [style="solid,filled"]
 
@@ -212,6 +212,8 @@ digraph {
 	haskell -> algoritmer
 	diskmat -> algoritmer
 	matstat -> algoritmer
+
+	lolnode [label="", image="sndlogo.svg"]
 	
 
 }
