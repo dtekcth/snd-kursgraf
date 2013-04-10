@@ -29,7 +29,7 @@ digraph G
 	analys -> el
 
 	subgraph cluster_TKDAT2 {
-                label = "TKDAT-2"
+		label = "TKDAT-2"
 		rank = same
 		node [fillcolor="gold1"]
 		matstat [label = "Matematisk\nstatistik"]
@@ -72,7 +72,7 @@ digraph G
 	linalg -> regler
 
 	subgraph cluster_CSALL {
-                label = "CSALL"
+		label = "CSALL"
 		rank = same
 		node [style ="filled", fillcolor="red"]
 		frontProgramming [label="Frontiers of programming language technology"]
@@ -127,11 +127,18 @@ digraph G
 		computerNetworks [label="Computer Networks"]
 		networkSecurity [label="Network Security"]
 		computerSecurity [label="Computer Security"]
+		advTopicsCS [label="Advance Topics in CSN"]
+		# Valbara
+		subgraph {
+			node [style="dotted, filled"]
+		}
 	}
 
 	distSys -> advDistSys
 	datakom -> networkSecurity
 	datakom -> computerNetworks
+	concurrent -> computerNetworks
+	computerNetworks -> advTopicsCS
 
 
 
