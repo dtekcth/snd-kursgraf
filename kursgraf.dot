@@ -1,8 +1,15 @@
-digraph G
-{
+digraph {
 	//nodesep=1
+	size="37.3701, 25.5591"
+	ratio=fill
+	graph[margin=1]
+	
+	nodesep=0.7
+	fixedsize=true
+	//K=0.2
 	splines=true
 	overlap=prism
+	//arrowsize=10.0
 	node [fontname="DejaVuSans"]
 	fontname="DejaVuSans"
 
@@ -10,9 +17,9 @@ digraph G
 
 
 
-	subgraph cluster_TKDAT1 {
-                label = "TKDAT-1"
-		rank = same
+	subgraph TKDAT1 {
+		label = "TKDAT-1"
+		//rank = same
 		node [fillcolor="lightblue"]
 		haskell [label = "Funktionell\nprogrammering"]
 		diskmat [label = "Diskret\nMatematik"]
@@ -21,16 +28,16 @@ digraph G
 		analys [label = "Matematisk\nanalys"]
 		mop [label = "Maskinorienterad\nprogrammering"]
 		el [label = "Elektriska kretsar &\nfält"]
-		barsaft [label = "Bärkraftig\nresurs"]
+		barsaft [label = "Bärkraftig\nresursanvändning"]
 	}
 
 	diskmat -> digodat
 	digodat -> mop
 	analys -> el
 
-	subgraph cluster_TKDAT2 {
+	subgraph TKDAT2 {
 		label = "TKDAT-2"
-		rank = same
+		//rank = same
 		node [fillcolor="gold1"]
 		matstat [label = "Matematisk\nstatistik"]
 		oop [label = "Objektorienterad\nprogrammering"]
@@ -43,7 +50,7 @@ digraph G
 			concurrent [label = "Parallel\nprogrammering"]
 		}
 		dst [ label = "Datorsystem-\nteknik"]
-		datakom [label = "Dator-\nkommunikation"]
+		datakom [label = "Data-\nkommunikation"]
 	}
 	haskell -> pp
 	haskell -> dstrukt
@@ -57,13 +64,21 @@ digraph G
 	linalg -> matstat
 	diskmat -> matstat
 
-	subgraph cluster_TKDAT3 {
+	subgraph TKDAT3 {
 		label = "TKDAT-3"
-		rank = same
+		//rank = same
 		node [fillcolor = "green2"]
 		tss [label = "Transformer"]
 		regler [label = "Reglerteknik"]
+        kandidat [label="Kandidatarbete"]
+        mts [label = "MTS-kurser"]
+        subgraph {
+			node [style="dotted, filled"]
+            elektronik [label="Elektronik"]
+        }
 	}
+    analys -> elektronik
+    el -> elektronik
 	tss -> regler
 	analys -> tss
 	analys -> regler
@@ -71,30 +86,37 @@ digraph G
 	el -> regler
 	linalg -> regler
 
-	subgraph cluster_CSALL {
+	subgraph CSALL {
 		label = "CSALL"
-		rank = same
+		//rank = same
 		node [style ="filled", fillcolor="red"]
-		frontProgramming [label="Frontiers of programming language technology"]
-		compilerConst [label="Compiler construction"]
-		paraFunc [label="Parallel functional programming"]
-		advAlg [label = "Avancerade\nAlgoritmer"]
-		advFunc [label = "Advanced \n Func. Prog"]
-		logik [label = "Logic in CS"]
 		prolang [label = "Programming \n Language Tech"]
-		ml [label = "Machine Learning"]
-		softEng [label ="Software Eng. \n using Formal M"]
-		discopt [label = "Discrete Optimization"]
-		ai [label ="Artifical Intelligence"]
-		models [label ="Models of Computation"]
-		langsecurity [label ="Language-based \n Security"]
-		types [label = "Types for programs \n and proofs "]
 		algoritmer [label ="Algorithms"]
-		crypto [label = "Cryptography"]
+		logik [label = "Logic in CS"]
+
+		// Valbara
+		subgraph {
+			node [style="dotted, filled"]
+    		frontProgramming [label="Frontiers of programming\nlanguage technology"]
+	    	compilerConst [label="Compiler construction"]
+	    	paraFunc [label="Parallel functional\nprogramming"]
+	    	advAlg [label = "Avancerade\nAlgoritmer"]
+	    	advFunc [label = "Advanced \n Func. Prog"]
+	    	ml [label = "Machine Learning"]
+	    	softEng [label ="Software Eng. \n using Formal M"]
+	    	discopt [label = "Discrete Optimization"]
+	    	ai [label ="Artifical Intelligence"]
+	    	models [label ="Models of Computation"]
+	    	langsecurity [label ="Language-based \n Security"]
+	    	types [label = "Types for programs \n and proofs "]
+	    	crypto [label = "Cryptography"]
+        }
 	}
+    prolang -> paraFunc
 	diskmat -> models
 	logik -> models
 	diskmat -> crypto
+    dstrukt -> crypto
 	haskell -> types
 	types -> models
 	algoritmer -> discopt
@@ -113,32 +135,65 @@ digraph G
 	dstrukt -> ml
 	algoritmer -> ai
 	dstrukt -> compilerConst
+    prolang -> langsecurity
+    dstrukt -> langsecurity
+    prolang -> compilerConst
+    prolang -> frontProgramming
 
-	subgraph cluster_CSN {
+	subgraph CSN {
 		label="CSN"
-		rank = same
+		//rank = same
 		node [style="filled",fillcolor="green4"]
-		rts [label="Real time systems"]
-		parallelOrganization [label="Parallel computer organization and design"]
-		parallelRTS [label="Parallel and distributed real-time systems"]
-		distSys [label="Distributed Systems"]
-		advDistSys [label="Advanced distributed systems"]
-		ftcs [label="Fault tolerant computer systems"]
-		computerNetworks [label="Computer Networks"]
-		networkSecurity [label="Network Security"]
-		computerSecurity [label="Computer Security"]
-		advTopicsCS [label="Advance Topics in CSN"]
-		# Valbara
+        computerNetworks [label="Computer Networks"]
+		oS [label="Operating systems"]
+		ftcs [label="Fault tolerant\ncomputer systems"]
+		advTopicsCSN [label="Advance Topics\nin CSN"]
+
+		// Valbara
 		subgraph {
 			node [style="dotted, filled"]
+            advDistSys [label="Advanced\ndistributed systems"]    	
+		    networkSecurity [label="Network Security"]
+    		computerSecurity [label="Computer Security"]
+	    	rts [label="Real time\nsystems"]
+	    	parallelOrganization [label="Parallel computer\norganization and design"]
+	    	parallelRTS [label="Parallel and distributed\nreal-time systems"]
+	    	distSys [label="Distributed Systems"]
+            energyComp [label="Energy aware\ncomputing"]
+            routerSwitch [label="Router och\nswitchteknik"]
+            commEng [label="Introduction to\ncommunication engineering"]
+            compArch [label="Computer Architecture"]
+            mInAdv [label="Masterclass in\nAreas of Advance"]
 		}
 	}
-
+    kandidat -> mInAdv
+    dst -> compArch
+    tss -> commEng
+    datakom -> routerSwitch
+    dst -> energyComp
+    matstat -> ftcs
+    tss -> ftcs
+    concurrent -> ftcs
+    concurrent -> distSys
+    distSys -> advTopicsCSN
 	distSys -> advDistSys
 	datakom -> networkSecurity
 	datakom -> computerNetworks
+    datakom -> advTopicsCSN
 	concurrent -> computerNetworks
-	computerNetworks -> advTopicsCS
+	computerNetworks -> advTopicsCSN
+    dstrukt -> oS
+	mop -> oS
+    concurrent -> oS
+    oS -> computerSecurity
+    oS -> advTopicsCSN
+    oS -> rts
+    concurrent -> rts
+    rts -> parallelRTS
+    algoritmer -> parallelRTS
+    computerSecurity -> networkSecurity
+    concurrent -> parallelOrganization
+    dst -> parallelOrganization
 
 
 
@@ -147,17 +202,16 @@ digraph G
 		node [style="dotted, filled"]
 		flervar [label = "Analys i\nflera variabler"]
 		digkonstr [label = "Digital-\nkonstruktion"]
-		mts [label = "MTS-kurser"]	
-		oS [label="Operating systems"]
+		
 	}
 	syntes -> digkonstr
 	linalg -> flervar
 	analys -> flervar
+	flervar -> regler
 	dstrukt -> algoritmer
 	haskell -> algoritmer
 	diskmat -> algoritmer
 	matstat -> algoritmer
-	dstrukt -> oS
-	mop -> oS
+	
 
 }
