@@ -3,8 +3,8 @@ digraph {
 	size="37.3701, 25.5591"
 	ratio=fill
 	graph[margin=1]
-	
-	nodesep=0.7
+
+//	nodesep=0.7
 	fixedsize=true
 	//K=0.2
 	splines=true
@@ -152,7 +152,7 @@ digraph {
 		// Valbara
 		subgraph {
 			node [style="dotted, filled"]
-            advDistSys [label="Advanced\ndistributed systems"]    	
+            advDistSys [label="Advanced\ndistributed systems"]
 		    networkSecurity [label="Network Security"]
     		computerSecurity [label="Computer Security"]
 	    	rts [label="Real time\nsystems"]
@@ -202,7 +202,7 @@ digraph {
 		node [style="dotted, filled"]
 		flervar [label = "Analys i\nflera variabler"]
 		digkonstr [label = "Digital-\nkonstruktion"]
-		
+
 	}
 	syntes -> digkonstr
 	linalg -> flervar
@@ -214,6 +214,6 @@ digraph {
 	matstat -> algoritmer
 
 	lolnode [label="", image="sndlogo.svg"]
-	
+
 
 }

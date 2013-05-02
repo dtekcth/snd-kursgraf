@@ -12,4 +12,7 @@ for eng in ${ENGINES[@]}; do
 	command $eng $IN -Tpdf > "kursgraf_$eng.pdf"
 done
 
-rm $FP
+if [[ "$1" = "reduce" ]]; then
+	rm $FP
+fi
+
