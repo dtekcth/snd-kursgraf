@@ -1,34 +1,55 @@
 digraph {
 	//nodesep=1
-	size="37.3701, 25.5591"
+	size="25.5, 17.75"
 	ratio=fill
-	graph[margin=1]
+	graph[margin="1,1"]
+	//ranksep = 0.01
+	rankdir = LR
 
-//	nodesep=0.7
-	fixedsize=true
-	//K=0.2
+	//nodesep=0.1
+	//fixedsize=true
+	//K=10
 	splines=true
 	overlap=prism
 	//arrowsize=10.0
-	node [fontname="Latin Modern Sans"]
+	node [fontname="Latin Modern Sans", fontsize=10, width=1.5]
 	fontname="Latin Modern Sans"
 
 	node [style="solid,filled"]
 
+	subgraph Legend {
+		node [pin=true]
+		label = "Teckenförklaring"
+		style=tapered;
+		penwidth=0;
+		color=lightgrey;
+		DM2 [fillcolor = green4, label="Master CSN", penwidth=0, pos="1,2!", pin=true]
+		DM1 [fillcolor = red, label="Master CSALL", penwidth=0]
+		D3 [fillcolor = green2, label="Årskurs 3", penwidth=0]
+		D2 [fillcolor = gold1, label="Årskurs 2", penwidth=0]
+		D1 [fillcolor = lightblue, label="Årskurs 1", penwidth=0]
 
+		Valbar [style="dashed", penwidth=2]
+		Obligatorisk [style="solid"]
+	}
+
+	subgraph Fulhack {
+		node[shape=none, width=0, height=0, label=""];
+		edge[dir=none, style=invis];
+		L1 -> L2 -> L3 -> L4 -> L5 -> L6
+	}
 
 	subgraph TKDAT1 {
 		label = "TKDAT-1"
-		//rank = same
-		node [fillcolor="lightblue"]
+		node [fillcolor="#ACC5F6"]
 		haskell [label = "Funktionell\nprogrammering"]
-		diskmat [label = "Diskret\nMatematik"]
-		linalg [label = "Linjär\nAlgebra"]
-		digodat [label = "Digital &\nDatorteknik"]
+		diskmat [label = "Diskret\nmatematik"]
+		linalg [label = "Linjär\nalgebra"]
+		digodat [label = "Grundläggande\ndatorteknik"]
 		analys [label = "Matematisk\nanalys"]
-		mop [label = "Maskinorienterad\nprogrammering"]
+		mop [label = "Programmering av\ninbyggda system"]
 		el [label = "Elektriska kretsar &\nfält"]
-		barsaft [label = "Bärkraftig\nresursanvändning"]
+		oop [label = "Objektorienterad\nprogrammering"]
 	}
 
 	diskmat -> digodat
@@ -38,20 +59,21 @@ digraph {
 	subgraph TKDAT2 {
 		label = "TKDAT-2"
 		//rank = same
-		node [fillcolor="gold1"]
+		node [fillcolor="#FFD942"]
 		matstat [label = "Matematisk\nstatistik"]
-		oop [label = "Objektorienterad\nprogrammering"]
 		fysik [label = "Fysik för\ningenjörer"]
 		dstrukt [label = "Datastrukturer"]
 		syntes [label = "Digitalsyntes"]
+		dtekproj [label = "Datatekniskt\nprojekt"]
 		subgraph {
-			node [style="dotted, filled"]
+			node [style="dashed, filled", penwidth=2]
 			pp [label = "Programming\nParadigms"]
 			concurrent [label = "Parallel\nprogrammering"]
 		}
 		dst [ label = "Datorsystem-\nteknik"]
 		datakom [label = "Data-\nkommunikation"]
 	}
+	mop -> dtekproj
 	haskell -> pp
 	haskell -> dstrukt
 	oop -> dstrukt
@@ -67,36 +89,39 @@ digraph {
 	subgraph TKDAT3 {
 		label = "TKDAT-3"
 		//rank = same
-		node [fillcolor = "green2"]
+		node [fillcolor = "#BC4BEC"]
 		tss [label = "Transformer"]
 		regler [label = "Reglerteknik"]
         kandidat [label="Kandidatarbete"]
+		barsaft [label = "Bärkraftig\nresursanvändning"]
         mts [label = "MTS-kurser"]
+        	flervar [label = "Analys i\nflera variabler"]
+		digkonstr [label = "Digital-\nkonstruktion"]
         subgraph {
-			node [style="dotted, filled"]
+			node [style="dashed, filled", penwidth=2]
             elektronik [label="Elektronik"]
+            databas [label="Databaser"]
         }
 	}
     analys -> elektronik
     el -> elektronik
 	tss -> regler
 	analys -> tss
-	analys -> regler
+	//analys -> regler //uppenbart
 	fysik -> regler
 	el -> regler
 	linalg -> regler
-
+	oop -> databas
 	subgraph CSALL {
 		label = "CSALL"
-		//rank = same
-		node [style ="filled", fillcolor="red"]
+		node [fillcolor="#E33D31"]
 		prolang [label = "Programming \n Language Tech"]
 		algoritmer [label ="Algorithms"]
 		logik [label = "Logic in CS"]
 
 		// Valbara
 		subgraph {
-			node [style="dotted, filled"]
+			node [style="dashed, filled", penwidth=2]
     		frontProgramming [label="Frontiers of programming\nlanguage technology"]
 	    	compilerConst [label="Compiler construction"]
 	    	paraFunc [label="Parallel functional\nprogramming"]
@@ -112,6 +137,7 @@ digraph {
 	    	crypto [label = "Cryptography"]
         }
 	}
+
     prolang -> paraFunc
 	diskmat -> models
 	logik -> models
@@ -123,16 +149,16 @@ digraph {
 	linalg -> discopt
 	concurrent -> softEng
 	logik -> softEng
-	diskmat -> logik
+	diskmat -> logik [minlen = 3]
 	matstat -> advAlg
 	linalg -> advAlg
 	algoritmer -> advAlg
 	algoritmer -> ml
-	analys -> ml
+	analys -> ml [weight=10]
 	matstat -> ml
 	linalg -> ml
 	haskell -> advFunc
-	dstrukt -> ml
+	//dstrukt -> ml //"uppenbar"
 	algoritmer -> ai
 	dstrukt -> compilerConst
     prolang -> langsecurity
@@ -141,9 +167,7 @@ digraph {
     prolang -> frontProgramming
 
 	subgraph CSN {
-		label="CSN"
-		//rank = same
-		node [style="filled",fillcolor="green4"]
+		node [fillcolor="#68E331"]
         computerNetworks [label="Computer Networks"]
 		oS [label="Operating systems"]
 		ftcs [label="Fault tolerant\ncomputer systems"]
@@ -151,7 +175,7 @@ digraph {
 
 		// Valbara
 		subgraph {
-			node [style="dotted, filled"]
+			node [style="dashed, filled", penwidth=2]
             advDistSys [label="Advanced\ndistributed systems"]
 		    networkSecurity [label="Network Security"]
     		computerSecurity [label="Computer Security"]
@@ -196,14 +220,6 @@ digraph {
     dst -> parallelOrganization
 
 
-
-   //Valbara
-	subgraph {
-		node [style="dotted, filled"]
-		flervar [label = "Analys i\nflera variabler"]
-		digkonstr [label = "Digital-\nkonstruktion"]
-
-	}
 	syntes -> digkonstr
 	linalg -> flervar
 	analys -> flervar
@@ -213,7 +229,7 @@ digraph {
 	diskmat -> algoritmer
 	matstat -> algoritmer
 
-	lolnode [label="", image="sndlogo.svg"]
+	//lolnode [label="", image="sndlogo.svg"]
 
 
 }
