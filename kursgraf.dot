@@ -92,15 +92,16 @@ digraph {
 		node [fillcolor = "#BC4BEC"]
 		tss [label = "Transformer, signaler\noch system"]
 		regler [label = "Reglerteknik"]
-        kandidat [label="Kandidatarbete"]
+        	kandidat [label="Kandidatarbete"]
 		barsaft [label = "Miljökurs"]
-        mts [label = "MTS-kurser"]
-        	flervar [label = "Analys i\nflera variabler"]
-		digkonstr [label = "Digital-\nkonstruktion, projektkurs"]
+        	mts [label = "MTS-kurser"]
+        	digkonstr [label = "Digital-\nkonstruktion, projektkurs"]
         subgraph {
-			node [style="dashed, filled", penwidth=2]
+	    node [style="dashed, filled", penwidth=2]
             elektronik [label="Elektronik"]
             databas [label="Databaser"]
+	    flervar [label = "Analys i\nflera variabler"]
+		
         }
 	}
     analys -> elektronik
