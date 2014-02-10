@@ -95,13 +95,13 @@ digraph {
         	kandidat [label="Kandidatarbete"]
 		barsaft [label = "Miljökurs"]
         	mts [label = "MTS-kurser"]
-        	digkonstr [label = "Digital-\nkonstruktion, projektkurs"]
-        subgraph {
+        	subgraph {
 	    node [style="dashed, filled", penwidth=2]
             elektronik [label="Elektronik"]
             databas [label="Databaser"]
 	    flervar [label = "Analys i\nflera variabler"]
-		
+	    digkonstr [label = "Digital-\nkonstruktion, projektkurs"]
+        	
         }
 	}
     analys -> elektronik
