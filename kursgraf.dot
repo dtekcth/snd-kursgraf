@@ -23,11 +23,11 @@ digraph {
 		style=tapered;
 		penwidth=0;
 		color=lightgrey;
-		DM2 [fillcolor = green4, label="Master CSN", penwidth=0, pos="1,2!", pin=true]
-		DM1 [fillcolor = red, label="Master CSALL", penwidth=0]
-		D3 [fillcolor = green2, label="Årskurs 3", penwidth=0]
-		D2 [fillcolor = gold1, label="Årskurs 2", penwidth=0]
-		D1 [fillcolor = lightblue, label="Årskurs 1", penwidth=0]
+		DM2 [fillcolor = "#68E331", label="Master CSN", penwidth=0, pos="1,2!", pin=true]
+		DM1 [fillcolor = "#E33D31", label="Master CSALL", penwidth=0]
+		D3 [fillcolor = "#BC4BEC", label="Årskurs 3", penwidth=0]
+		D2 [fillcolor = "#FFD942", label="Årskurs 2", penwidth=0]
+		D1 [fillcolor = "#ACC5F6", label="Årskurs 1", penwidth=0]
 
 		Valbar [style="dashed", penwidth=2]
 		Obligatorisk [style="solid"]
@@ -61,14 +61,15 @@ digraph {
 		//rank = same
 		node [fillcolor="#FFD942"]
 		matstat [label = "Matematisk\nstatistik"]
+		oop [label = "Objektorienterad\nprogrammering"]
 		fysik [label = "Fysik för\ningenjörer"]
 		dstrukt [label = "Datastrukturer"]
-		syntes [label = "Digitalsyntes"]
+		syntes [label = "Digital konstruktion"]
 		dtekproj [label = "Datatekniskt\nprojekt"]
 		subgraph {
 			node [style="dashed, filled", penwidth=2]
 			pp [label = "Programming\nParadigms"]
-			concurrent [label = "Parallel\nprogrammering"]
+			concurrent [label = "Parallell\nprogrammering"]
 		}
 		dst [ label = "Datorsystem-\nteknik"]
 		datakom [label = "Data-\nkommunikation"]
@@ -90,17 +91,18 @@ digraph {
 		label = "TKDAT-3"
 		//rank = same
 		node [fillcolor = "#BC4BEC"]
-		tss [label = "Transformer"]
+		tss [label = "Transformer, signaler\noch system"]
 		regler [label = "Reglerteknik"]
-        kandidat [label="Kandidatarbete"]
-		barsaft [label = "Bärkraftig\nresursanvändning"]
-        mts [label = "MTS-kurser"]
-        	flervar [label = "Analys i\nflera variabler"]
-		digkonstr [label = "Digital-\nkonstruktion"]
-        subgraph {
-			node [style="dashed, filled", penwidth=2]
+        	kandidat [label="Kandidatarbete"]
+		barsaft [label = "Miljökurs"]
+        	mts [label = "MTS-kurser"]
+        	subgraph {
+	    node [style="dashed, filled", penwidth=2]
             elektronik [label="Elektronik"]
             databas [label="Databaser"]
+	    flervar [label = "Analys i\nflera variabler"]
+	    digkonstr [label = "Digital-\nkonstruktion, projektkurs"]
+        	
         }
 	}
     analys -> elektronik
@@ -115,7 +117,7 @@ digraph {
 	subgraph CSALL {
 		label = "CSALL"
 		node [fillcolor="#E33D31"]
-		prolang [label = "Programming \n Language Tech"]
+		prolang [label = "Programming \n language tech"]
 		algoritmer [label ="Algorithms"]
 		logik [label = "Logic in CS"]
 
@@ -125,19 +127,20 @@ digraph {
     		frontProgramming [label="Frontiers of programming\nlanguage technology"]
 	    	compilerConst [label="Compiler construction"]
 	    	paraFunc [label="Parallel functional\nprogramming"]
-	    	advAlg [label = "Avancerade\nAlgoritmer"]
-	    	advFunc [label = "Advanced \n Func. Prog"]
-	    	ml [label = "Machine Learning"]
-	    	softEng [label ="Software Eng. \n using Formal M"]
-	    	discopt [label = "Discrete Optimization"]
-	    	ai [label ="Artifical Intelligence"]
-	    	models [label ="Models of Computation"]
-	    	langsecurity [label ="Language-based \n Security"]
+	    	advAlg [label = "Advanced\nalgorithms"]
+	    	advFunc [label = "Advanced \n func. prog"]
+	    	ml [label = "Machine learning"]
+	    	softEng [label ="Software eng. \n using formal meth."]
+	    	discopt [label = "Discrete optimization"]
+	    	ai [label ="Artifical intelligence"]
+	    	models [label ="Models of computation"]
+	    	langsecurity [label ="Language-based \n security"]
 	    	types [label = "Types for programs \n and proofs "]
 	    	crypto [label = "Cryptography"]
         }
 	}
-
+  oop -> prolang
+  mop -> prolang
     prolang -> paraFunc
 	diskmat -> models
 	logik -> models
@@ -168,26 +171,26 @@ digraph {
 
 	subgraph CSN {
 		node [fillcolor="#68E331"]
-        computerNetworks [label="Computer Networks"]
+        computerNetworks [label="Computer networks"]
 		oS [label="Operating systems"]
 		ftcs [label="Fault tolerant\ncomputer systems"]
-		advTopicsCSN [label="Advance Topics\nin CSN"]
+		advTopicsCSN [label="Advanced topics\nin CSN"]
 
 		// Valbara
 		subgraph {
 			node [style="dashed, filled", penwidth=2]
             advDistSys [label="Advanced\ndistributed systems"]
-		    networkSecurity [label="Network Security"]
-    		computerSecurity [label="Computer Security"]
+		    networkSecurity [label="Network security"]
+    		computerSecurity [label="Computer security"]
 	    	rts [label="Real time\nsystems"]
 	    	parallelOrganization [label="Parallel computer\norganization and design"]
 	    	parallelRTS [label="Parallel and distributed\nreal-time systems"]
-	    	distSys [label="Distributed Systems"]
+	    	distSys [label="Distributed systems"]
             energyComp [label="Energy aware\ncomputing"]
-            routerSwitch [label="Router och\nswitchteknik"]
+            routerSwitch [label="Router- och\nswitchteknik"]
             commEng [label="Introduction to\ncommunication engineering"]
-            compArch [label="Computer Architecture"]
-            mInAdv [label="Masterclass in\nAreas of Advance"]
+            compArch [label="Computer architecture"]
+            mInAdv [label="Masterclass in\nareas of advance"]
 		}
 	}
     kandidat -> mInAdv
