@@ -41,15 +41,16 @@ digraph {
 
         subgraph TKDAT1 {
             label = "TKDAT-1"
+                // rank = same
                 node [fillcolor="#ACC5F6"]
-                haskell [label = "Funktionell\nprogrammering"]
-                diskmat [label = "Diskret\nmatematik"]
-                linalg [label = "Linjär\nalgebra"]
-                digodat [label = "Grundläggande\ndatorteknik"]
-                analys [label = "Matematisk\nanalys"]
-                mop [label = "Programmering av\ninbyggda system"]
-                datakom [label = "Data-\nkommunikation"]
-                oop [label = "Objektorienterad\nprogrammering"]
+                haskell  [label = "Funktionell\nprogrammering"]
+                diskmat  [label = "Diskret\nmatematik"]
+                linalg   [label = "Linjär\nalgebra"]
+                digodat  [label = "Grundläggande\ndatorteknik"]
+                analys   [label = "Matematisk\nanalys"]
+                mop      [label = "Programmering av\ninbyggda system"]
+                datakom  [label = "Data-\nkommunikation"]
+                oop      [label = "Objektorienterad\nprogrammering"]
         }
 
         diskmat -> digodat
@@ -58,20 +59,20 @@ digraph {
 
             subgraph TKDAT2 {
                 label = "TKDAT-2"
-                    //rank = same
+                    // rank = same
                     node [fillcolor="#FFD942"]
-                    matstat [label = "Matematisk\nstatistik"]
-                    fysik [label = "Fysik för\ningenjörer"]
-                    dstrukt [label = "Datastrukturer"]
-                    syntes [label = "Digital konstruktion"]
+                    matstat  [label = "Matematisk\nstatistik"]
+                    fysik    [label = "Fysik för\ningenjörer"]
+                    dstrukt  [label = "Datastrukturer"]
+                    syntes   [label = "Digital konstruktion"]
                     dtekproj [label = "Datatekniskt\nprojekt"]
-                    el [label = "Elektriska kretsar &\nfält"]
+                    el       [label = "Elektriska kretsar &\nfält"]
                     subgraph {
                         node [style="dashed, filled", penwidth=2]
-                        matdom [label = "Matematikens Domän-\nspecifika språk"]
+                        matdom     [label = "Matematikens Domän-\nspecifika språk"]
                         concurrent [label = "Parallell\nprogrammering"]
                     }
-                    dst [ label = "Datorsystem-\nteknik"]
+                    dst      [ label = "Datorsystem-\nteknik"]
             }
         mop -> dtekproj
             haskell -> dstrukt
@@ -81,6 +82,7 @@ digraph {
             mop -> dst
             analys -> fysik
             linalg -> matstat
+            analys -> matstat
             diskmat -> matstat
             analys -> el
             haskell -> matdom
@@ -91,22 +93,22 @@ digraph {
 
             subgraph TKDAT3 {
                 label = "TKDAT-3"
-                    //rank = same
+                    // rank = same
                     node [fillcolor = "#BC4BEC"]
-                    tss [label = "Transformer, signaler\noch system"]
-                    regler [label = "Reglerteknik"]
-                    kandidat [label="Kandidatarbete"]
-                    barsaft [label = "Miljökurs"]
-                    mts [label = "MTS-kurser"]
+                    tss      [label = "Transformer, signaler\noch system"]
+                    regler   [label = "Reglerteknik"]
+                    kandidat [label = "Kandidatarbete"]
+                    barsaft  [label = "Miljökurs"]
+                    mts      [label = "MTS-kurser"]
                     subgraph {
                         node [style="dashed, filled", penwidth=2]
                         elektronik [label="Elektronik"]
-                        databas [label="Databaser"]
-                        flervar [label = "Analys i\nflera variabler"]
-                        digkonstr [label = "Digital-\nkonstruktion, projektkurs"]
-                        fysik2 [label = "Fysik 2"]
-                        web [label = "Web-applikationer"]
-                        deskonstr [label = "Design/konstruktion \nav grafiska gränssnitt"]
+                        databas    [label="Databaser"]
+                        flervar    [label = "Analys i\nflera variabler"]
+                        digkonstr  [label = "Digital-\nkonstruktion, projektkurs"]
+                        fysik2     [label = "Fysik 2"]
+                        web        [label = "Web-applikationer"]
+                        deskonstr  [label = "Design/konstruktion\nav grafiska gränssnitt"]
                     }
             }
 
@@ -129,33 +131,35 @@ digraph {
 
             subgraph CSALL {
                 label = "CSALL"
+                    // rank = same
                     node [fillcolor="#E33D31"]
-                    prolang [label = "Programming \n language tech"]
-                    algoritmer [label ="Algorithms"]
-                    logik [label = "Logic in CS"]
-                    cscience [label = "The Computer Scientist\n in Society"]
+                    prolang    [label = "Programming\nlanguage tech"]
+                    algoritmer [label = "Algorithms"]
+                    logik      [label = "Logic in CS"]
+                    cscience   [label = "The Computer Scientist\n in Society"]
 
                     // Valbara
                     subgraph {
                         node [style="dashed, filled", penwidth=2]
-                        advAlg [label = "Advanced\nalgorithms"]
-                        discopt [label = "Discrete optimization"]
-                        ml [label = "Machine learning"]
-                        ai [label ="Artifical intelligence"]
-                        models [label ="Models of computation"]
-                        types [label = "Types for programs \n and proofs "]
-                        softEng [label ="Software eng. \n using formal meth."]
+                        advAlg   [label = "Advanced\nalgorithms"]
+                        discopt  [label = "Discrete optimization"]
+                        ml       [label = "Machine learning"]
+                        ai       [label = "Artifical intelligence"]
+                        models   [label = "Models of computation"]
+                        types    [label = "Types for programs\nand proofs "]
+                        softEng  [label = "Software eng.\nusing formal meth."]
                         compilerConst [label="Compiler construction"]
-                        advFunc [label = "Advanced \n func. prog"]
-                        paraFunc [label="Parallel functional\nprogramming"]
-                        crypto [label = "Cryptography"]
-                        langsecurity [label ="Language-based \n security"]
+                        advFunc  [label = "Advanced\nfunc. prog"]
+                        paraFunc [label = "Parallel functional\nprogramming"]
+                        crypto   [label = "Cryptography"]
+                        langsecurity [label = "Language-based\nsecurity"]
                     }
             }
         algoritmer -> advAlg
             matstat -> advAlg
             linalg -> advAlg
             mop -> prolang
+            dstrukt -> prolang
             algoritmer -> ml
             prolang -> paraFunc
             diskmat -> models
@@ -164,6 +168,7 @@ digraph {
             dstrukt -> crypto
             oop -> prolang
             haskell -> types
+            logik -> types
             types -> models
             algoritmer -> discopt
             linalg -> discopt
@@ -175,6 +180,8 @@ digraph {
             matstat -> ml
             linalg -> ml
             haskell -> advFunc
+            prolang -> advFunc
+            logik -> advFunc
             algoritmer -> ai
             dstrukt -> compilerConst
             prolang -> langsecurity
