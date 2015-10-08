@@ -14,8 +14,8 @@ Obestämt, kolla issues.
 
 ## Dtek?
 Går du på DTEK?
-Tycker du någon kurs saknas eller något beroende är fel? 
-Ändra och skapa pull-requests!  
+Tycker du någon kurs saknas eller något beroende är fel?
+Ändra och skapa pull-requests!
 
 ## Kompilera
 För linux:
