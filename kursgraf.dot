@@ -69,7 +69,7 @@ digraph {
                     el       [label = "Elektriska kretsar &\nfält"]
                     subgraph {
                         node [style="dashed, filled", penwidth=2]
-                        matdom     [label = "Matematikens Domän-\nspecifika språk"]
+                        matdom     [label = "Matematikens domän-\nspecifika språk"]
                         concurrent [label = "Parallell\nprogrammering"]
                     }
                     dst      [ label = "Datorsystem-\nteknik"]
@@ -122,6 +122,7 @@ digraph {
             linalg -> regler
             oop -> databas
             matdom -> tss
+            matdom -> advFunc
             fysik -> fysik2
             oop -> deskonstr
             oop -> web
@@ -136,7 +137,7 @@ digraph {
                     prolang    [label = "Programming\nlanguage tech"]
                     algoritmer [label = "Algorithms"]
                     logik      [label = "Logic in CS"]
-                    cscience   [label = "The Computer Scientist\n in Society"]
+                    cscience   [label = "The Computer Scientist\nin Society"]
 
                     // Valbara
                     subgraph {
@@ -193,7 +194,7 @@ digraph {
                 computerNetworks [label="Computer networks"]
                 oS [label="Operating systems"]
                 ftcs [label="Fault tolerant\ncomputer systems"]
-                techwrite [label = "Tech. writing \nin CSN"]
+                techwrite [label = "Tech. writing\nin CSN"]
 
                 // Valbara
                 subgraph {
